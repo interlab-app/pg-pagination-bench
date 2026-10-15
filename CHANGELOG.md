@@ -17,4 +17,4 @@ First public version of the harness behind the InterLAB study R-01 “OFFSET vs 
 - `CITATION.cff`, `THIRD_PARTY_LICENSES.md`.
 
 ### Known limitations
-Single connection, no concurrency; warm cache only; `run.sh`-style multi-run orchestration is left to the shell; MIT license.
+Single connection, no concurrency; warm cache only; `run.sh`-style multi-run orchestration is left to the shell.
