@@ -1,0 +1,35 @@
+cff-version: 1.2.0
+message: "If you use this software or its results, please cite it as below, together with the measurement conditions."
+type: software
+title: "pg-pagination-bench: reproducible LIMIT/OFFSET vs keyset pagination benchmark for PostgreSQL"
+version: 0.1.0
+authors:
+  - name: "InterLAB"
+    website: "https://interlab.app"
+url: "https://interlab.app/en/blog/paginaciya-offset-keyset-postgresql"
+repository-code: "https://github.com/interlab-app/pg-pagination-bench"
+license: MIT
+keywords:
+  - postgresql
+  - pagination
+  - keyset-pagination
+  - benchmark
+references:
+  - type: report
+    title: "OFFSET vs keyset pagination in PostgreSQL 17: how response time depends on page depth (InterLAB Research R-01)"
+    authors:
+      - name: "InterLAB"
+    date-published: "2026-10-12"
+    url: "https://interlab.app/en/blog/paginaciya-offset-keyset-postgresql"
+  - type: article
+    title: "Xorshift RNGs"
+    authors:
+      - family-names: "Marsaglia"
+        given-names: "George"
+    journal: "Journal of Statistical Software"
+    volume: 8
+    issue: 14
+    start: 1
+    end: 6
+    year: 2003
+    doi: "10.18637/jss.v008.i14"

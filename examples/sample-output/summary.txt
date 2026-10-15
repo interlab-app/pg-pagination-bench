@@ -1,0 +1,29 @@
+runs=1; rows measure=55, warmup=20; rows_match=0: 0
+format: median [p25–p75] (min–max), ms; buffers — median (min–max)
+
+ping (SELECT 1), client_ms, n=5: 0.410 [0.368–0.429] (0.321–0.573)
+
+variant | page | offset_rows | n | server_exec_ms | client_ms | planning_ms | shared_hit | shared_read | scan_node
+offset | 1 | 0 | 5 | 0.034 [0.031–0.048] (0.031–0.063) | 0.525 [0.520–0.553] (0.510–0.779) | 0.029 [0.026–0.031] (0.022–0.031) | 23 (23–23) | 0 (0–0) | Index Scan Backward orders_created_at_id_idx
+keyset | 1 | 0 | 5 | 0.042 [0.040–0.049] (0.035–0.139) | 0.465 [0.456–1.148] (0.404–1.544) | 0.032 [0.031–0.037] (0.023–0.046) | 23 (23–23) | 0 (0–0) | Index Scan Backward orders_created_at_id_idx
+offset | 100 | 1980 | 5 | 0.800 [0.652–0.999] (0.650–2.128) | 1.178 [1.033–1.192] (1.031–3.084) | 0.031 [0.028–0.033] (0.022–0.068) | 2019 (2019–2019) | 0 (0–0) | Index Scan Backward orders_created_at_id_idx
+keyset | 100 | 1980 | 5 | 0.040 [0.032–0.041] (0.032–0.068) | 0.562 [0.426–0.681] (0.409–1.165) | 0.105 [0.083–0.120] (0.059–0.142) | 23 (23–23) | 0 (0–0) | Index Scan Backward orders_created_at_id_idx
+offset | 1000 | 19980 | 5 | 7.313 [6.918–8.081] (6.634–15.20) | 7.765 [7.488–7.775] (6.822–11.76) | 0.028 [0.027–0.030] (0.026–0.040) | 20157 (20157–20157) | 0 (0–0) | Index Scan Backward orders_created_at_id_idx
+keyset | 1000 | 19980 | 5 | 0.071 [0.069–0.079] (0.042–0.109) | 0.611 [0.578–0.612] (0.501–1.522) | 0.065 [0.063–0.068] (0.035–0.123) | 23 (23–23) | 0 (0–0) | Index Scan Backward orders_created_at_id_idx
+offset | 10000 | 199980 | 5 | 56.90 [51.18–80.99] (49.92–95.17) | 59.55 [56.72–62.98] (50.12–63.09) | 0.031 [0.024–0.032] (0.024–0.046) | 201535 (201535–201535) | 0 (0–0) | Index Scan Backward orders_created_at_id_idx
+keyset | 10000 | 199980 | 5 | 0.061 [0.058–0.081] (0.043–0.101) | 0.616 [0.542–0.897] (0.399–2.064) | 0.066 [0.064–0.071] (0.033–0.087) | 23 (23–23) | 0 (0–0) | Index Scan Backward orders_created_at_id_idx
+offset | 50000 | 999980 | 5 | 286.5 [285.7–312.4] (265.9–446.9) | 263.6 [246.5–307.8] (243.9–474.5) | 0.023 [0.023–0.026] (0.021–0.031) | 1007665 (1007665–1007665) | 0 (0–0) | Index Scan Backward orders_created_at_id_idx
+keyset | 50000 | 999980 | 5 | 0.036 [0.032–0.048] (0.031–0.058) | 0.464 [0.459–0.565] (0.423–0.903) | 0.068 [0.066–0.105] (0.060–0.115) | 23 (23–23) | 0 (0–0) | Index Scan Backward orders_created_at_id_idx
+
+median server_exec_ms per run
+variant | page | run 1
+offset | 1 | 0.034
+keyset | 1 | 0.042
+offset | 100 | 0.800
+keyset | 100 | 0.040
+offset | 1000 | 7.313
+keyset | 1000 | 0.071
+offset | 10000 | 56.90
+keyset | 10000 | 0.061
+offset | 50000 | 286.5
+keyset | 50000 | 0.036

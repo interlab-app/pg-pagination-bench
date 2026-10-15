@@ -1,0 +1,8 @@
+PostgreSQL 17.11 on x86_64-pc-linux-musl, compiled by gcc (Alpine 15.2.0) 15.2.0, 64-bit
+shared_buffers = 128MB
+work_mem = 4MB
+effective_cache_size = 4GB
+random_page_cost = 4
+jit = off
+max_parallel_workers_per_gather = 2
+orders: 1000000 rows

@@ -1,0 +1,47 @@
+{
+  "name": "pg-pagination-bench",
+  "version": "0.1.0",
+  "description": "Reproducible benchmark of LIMIT/OFFSET vs keyset (cursor) pagination in PostgreSQL by page depth: warm-up, shuffled rounds, server and client time, buffers, raw CSV.",
+  "license": "MIT",
+  "author": "InterLAB <hello@interlab.app> (https://interlab.app)",
+  "homepage": "https://github.com/interlab-app/pg-pagination-bench#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/interlab-app/pg-pagination-bench.git"
+  },
+  "bugs": {
+    "url": "https://github.com/interlab-app/pg-pagination-bench/issues"
+  },
+  "type": "module",
+  "bin": {
+    "pg-pagination-bench": "bin/pg-pagination-bench.mjs"
+  },
+  "files": [
+    "bin",
+    "src",
+    "README.md",
+    "README.ru.md",
+    "CHANGELOG.md",
+    "CITATION.cff",
+    "THIRD_PARTY_LICENSES.md"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "test": "node --test test/core.test.mjs test/r01-reproduction.test.mjs test/integration.test.mjs",
+    "test:integration": "node --test test/integration.test.mjs"
+  },
+  "keywords": [
+    "postgresql",
+    "pagination",
+    "keyset",
+    "cursor-pagination",
+    "offset",
+    "benchmark",
+    "explain-analyze"
+  ],
+  "dependencies": {
+    "pg": "8.23.1"
+  }
+}
